@@ -61,12 +61,13 @@ public class OpenCommand implements Command {
                     room.addReservation(reservation);
                     LocalDate currentDate = LocalDate.now();
                     if(room.isAvailable()){
-                        if ((currentDate.equals(checkInDate) || currentDate.equals(checkOutDate)) || (currentDate.isAfter(checkInDate) && currentDate.isBefore(checkOutDate))) {
+                        if (currentDate.equals(checkInDate) || (currentDate.isAfter(checkInDate) && currentDate.isBefore(checkOutDate))) {
                             room.setAvailable(false);
                         }
                         else room.setAvailable(true);
                     }
                     // Ако стаята е заета вече, няма нужда да се гледат другите резервации, защото може да са стари и да объркат системата
+                    // В деня на check out-а стаята вече се води свободна
                 }
             }
         }

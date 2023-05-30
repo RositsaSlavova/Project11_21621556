@@ -1,5 +1,6 @@
 package bg.tu_varna.sit.f21621556.cli;
 
+import bg.tu_varna.sit.f21621556.commands.AvailabilityCommand;
 import bg.tu_varna.sit.f21621556.commands.CheckInCommand;
 import bg.tu_varna.sit.f21621556.contracts.Command;
 import bg.tu_varna.sit.f21621556.contracts.CommandHotel;
@@ -27,6 +28,7 @@ public class CommandLineInterface {
 
         commandsHotel = new HashMap<>();
         commandsHotel.put("checkin",new CheckInCommand(hotel));
+        commandsHotel.put("availability",new AvailabilityCommand(hotel));
     }
 
     public void run() throws Exception {
@@ -101,6 +103,15 @@ public class CommandLineInterface {
                         continue;
                     }
                     commandsHotel.get("checkin").execute(commandArguments);
+                }
+                break;
+                case "availability":
+                {
+                    if (currentFile == null) {
+                        System.out.println("No file is currently open");
+                        continue;
+                    }
+                    commandsHotel.get("availability").execute(commandArguments);
                 }
                 break;
                 case "print":
