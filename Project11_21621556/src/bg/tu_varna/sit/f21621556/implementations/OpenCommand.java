@@ -30,7 +30,6 @@ public class OpenCommand implements Command {
                 System.out.println("File created: " + fileName);
             } catch (IOException e) {
                 System.out.println("Error creating file: " + e.getMessage());
-                return;
             }
         } else {
             try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {

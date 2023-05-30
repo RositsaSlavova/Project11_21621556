@@ -1,6 +1,8 @@
 package bg.tu_varna.sit.f21621556.cli;
 
+import bg.tu_varna.sit.f21621556.commands.CheckInCommand;
 import bg.tu_varna.sit.f21621556.contracts.Command;
+import bg.tu_varna.sit.f21621556.contracts.CommandHotel;
 import bg.tu_varna.sit.f21621556.entities.Hotel;
 import bg.tu_varna.sit.f21621556.entities.Room;
 import bg.tu_varna.sit.f21621556.implementations.*;
@@ -9,6 +11,7 @@ import java.util.*;
 
 public class CommandLineInterface {
     protected static Map<String, Command> commands;
+    protected static Map<String, CommandHotel> commandsHotel;
     private Hotel hotel;
     private String currentFile=null;
     public CommandLineInterface(Hotel hotel) {
@@ -21,6 +24,9 @@ public class CommandLineInterface {
         commands.put("saveas", new SaveAsCommand(hotel));
         commands.put("help",new HelpCommand());
         commands.put("exit",new ExitCommand());
+
+        commandsHotel = new HashMap<>();
+        commandsHotel.put("checkin",new CheckInCommand(hotel));
     }
 
     public void run() throws Exception {
@@ -86,6 +92,15 @@ public class CommandLineInterface {
                 case "exit":
                 {
                     commands.get("exit").execute(null);
+                }
+                break;
+                case "checkin":
+                {
+                    if (currentFile == null) {
+                        System.out.println("No file is currently open");
+                        continue;
+                    }
+                    commandsHotel.get("checkin").execute(commandArguments);
                 }
                 break;
                 case "print":
