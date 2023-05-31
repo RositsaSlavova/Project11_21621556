@@ -3,7 +3,7 @@ import bg.tu_varna.sit.f21621556.entities.Room;
 import bg.tu_varna.sit.f21621556.cli.CommandLineInterface;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         Hotel hotel=new Hotel("RSS",2);
 
         Room room1=new Room("100",3);

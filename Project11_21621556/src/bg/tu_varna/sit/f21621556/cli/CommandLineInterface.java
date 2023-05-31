@@ -3,6 +3,7 @@ package bg.tu_varna.sit.f21621556.cli;
 import bg.tu_varna.sit.f21621556.commands.AvailabilityCommand;
 import bg.tu_varna.sit.f21621556.commands.CheckInCommand;
 import bg.tu_varna.sit.f21621556.commands.CheckOutCommand;
+import bg.tu_varna.sit.f21621556.commands.ReportCommand;
 import bg.tu_varna.sit.f21621556.contracts.Command;
 import bg.tu_varna.sit.f21621556.contracts.CommandHotel;
 import bg.tu_varna.sit.f21621556.entities.Hotel;
@@ -31,9 +32,10 @@ public class CommandLineInterface {
         commandsHotel.put("checkin",new CheckInCommand(hotel));
         commandsHotel.put("availability",new AvailabilityCommand(hotel));
         commandsHotel.put("checkout",new CheckOutCommand(hotel));
+        commandsHotel.put("report",new ReportCommand(hotel));
     }
 
-    public void run() throws Exception {
+    public void run() {
         Scanner scanner = new Scanner(System.in);
         String input;
         while (true) {
@@ -123,6 +125,15 @@ public class CommandLineInterface {
                         continue;
                     }
                     commandsHotel.get("checkout").execute(commandArguments);
+                }
+                break;
+                case "report":
+                {
+                    if (currentFile == null) {
+                        System.out.println("No file is currently open");
+                        continue;
+                    }
+                    commandsHotel.get("report").execute(commandArguments);
                 }
                 break;
                 case "print": {
