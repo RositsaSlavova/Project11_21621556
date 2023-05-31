@@ -30,6 +30,11 @@ public class Reservation {
     public int getGuestNumber() {
         return guestNumber;
     }
+
+    public void setCheckOutDate(LocalDate checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
+
     @Override
     public String toString() {
         return "Check-in Date: " + checkInDate +

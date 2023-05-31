@@ -21,7 +21,7 @@ public class AvailabilityCommand implements CommandHotel {
     @Override
     public void execute(String[] command) {
         if (command.length >2) {
-            System.out.println("You have to write: availability [<date>]");
+            System.out.println("Invalid command. Usage: availability [<date>]");
             return;
         }
 
@@ -35,14 +35,14 @@ public class AvailabilityCommand implements CommandHotel {
         }
     }
 
-    public Set<String> findAvailableRoomsByCurrentDate(){
+    private Set<String> findAvailableRoomsByCurrentDate(){
         for (Room room:hotel.getRooms()) {
             if(room.isAvailable()) availableRooms.add(room.getNumber());
         }
         return availableRooms;
     }
 
-    public Set<String> findAvailableRooms(){
+    private Set<String> findAvailableRooms(){
         for (Room room:hotel.getRooms()) {
             availableRooms.add(room.getNumber());
         }

@@ -2,6 +2,7 @@ package bg.tu_varna.sit.f21621556.cli;
 
 import bg.tu_varna.sit.f21621556.commands.AvailabilityCommand;
 import bg.tu_varna.sit.f21621556.commands.CheckInCommand;
+import bg.tu_varna.sit.f21621556.commands.CheckOutCommand;
 import bg.tu_varna.sit.f21621556.contracts.Command;
 import bg.tu_varna.sit.f21621556.contracts.CommandHotel;
 import bg.tu_varna.sit.f21621556.entities.Hotel;
@@ -29,6 +30,7 @@ public class CommandLineInterface {
         commandsHotel = new HashMap<>();
         commandsHotel.put("checkin",new CheckInCommand(hotel));
         commandsHotel.put("availability",new AvailabilityCommand(hotel));
+        commandsHotel.put("checkout",new CheckOutCommand(hotel));
     }
 
     public void run() throws Exception {
@@ -43,7 +45,7 @@ public class CommandLineInterface {
             switch (commandName) {
                 case "open": {
                     if (commandArguments.length < 2) {
-                        System.out.println("You have to write: open <file>");
+                        System.out.println("Invalid command. Usage: open <file>");
                         continue;
                     }
                     String fileName = commandArguments[1];
@@ -77,7 +79,7 @@ public class CommandLineInterface {
                         continue;
                     }
                     if (commandArguments.length < 2) {
-                        System.out.println("You have to write: saveas <file>");
+                        System.out.println("Invalid command. Usage: saveas <file>");
                         continue;
                     }
                     String fileName = commandArguments[1];
@@ -114,8 +116,16 @@ public class CommandLineInterface {
                     commandsHotel.get("availability").execute(commandArguments);
                 }
                 break;
-                case "print":
+                case "checkout":
                 {
+                    if (currentFile == null) {
+                        System.out.println("No file is currently open");
+                        continue;
+                    }
+                    commandsHotel.get("checkout").execute(commandArguments);
+                }
+                break;
+                case "print": {
                     //Помощна - докато пиша кода
                     List<Room> rooms = hotel.getRooms();
                     for (Room room : rooms) {

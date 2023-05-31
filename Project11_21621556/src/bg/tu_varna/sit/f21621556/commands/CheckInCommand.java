@@ -21,7 +21,7 @@ public class CheckInCommand implements CommandHotel {
     @Override
     public void execute(String[] command) {
         if (command.length < 5) {
-            System.out.println("You have to write: checkin <room> <from> <to> <note> [<guests>]");
+            System.out.println("Invalid command. Usage: checkin <room> <from> <to> <note> [<guests>]");
             return;
         }
         roomNumber=command[1];
@@ -50,7 +50,7 @@ public class CheckInCommand implements CommandHotel {
         }
 
     }
-    public boolean isRoomAvailable(){
+    private boolean isRoomAvailable(){
         for (Room room: hotel.getRooms()) {
             if(room.getNumber().equals(roomNumber)){
                 for (Reservation reservation:room.getReservations()) {
@@ -63,7 +63,7 @@ public class CheckInCommand implements CommandHotel {
         return true;
     }
 
-    public boolean addReservation(){
+    private boolean addReservation(){
         Reservation reservation=new Reservation(checkInDate,checkOutDate,note,guestNumber);
         for (Room room: hotel.getRooms()) {
             if(room.getNumber().equals(roomNumber)){
