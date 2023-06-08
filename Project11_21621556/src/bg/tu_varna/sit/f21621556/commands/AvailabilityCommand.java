@@ -12,7 +12,7 @@ import java.util.TreeSet;
 public class AvailabilityCommand implements CommandHotel {
     private Hotel hotel;
     private LocalDate date;
-    Set<String> availableRooms;
+    private Set<String> availableRooms;
     public AvailabilityCommand(Hotel hotel) {
         this.hotel = hotel;
         this.availableRooms=new TreeSet<>();
