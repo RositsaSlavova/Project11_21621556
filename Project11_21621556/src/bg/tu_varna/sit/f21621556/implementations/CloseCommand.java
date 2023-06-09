@@ -18,5 +18,6 @@ public class CloseCommand implements Command {
         System.out.println("Successfully closed " + fileName);
         hotel.getRooms().forEach(room -> room.getReservations().clear());
         hotel.getRooms().forEach(room -> room.setAvailable(true));
+        hotel.getRooms().forEach(room -> room.setUnavailability(null));
     }
 }

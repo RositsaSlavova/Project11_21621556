@@ -4,6 +4,7 @@ import bg.tu_varna.sit.f21621556.contracts.Command;
 import bg.tu_varna.sit.f21621556.entities.Hotel;
 import bg.tu_varna.sit.f21621556.entities.Reservation;
 import bg.tu_varna.sit.f21621556.entities.Room;
+import bg.tu_varna.sit.f21621556.entities.Unavailability;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -23,6 +24,17 @@ public class SaveCommand implements Command {
             for (Room room : hotel.getRooms()) {
                 String roomNumber = room.getNumber();
                 List<Reservation> reservations = room.getReservations();
+
+                Unavailability unavailability = room.getUnavailability();
+                if (unavailability != null) {
+                    String fromDate = unavailability.getUnavailableFromDate().toString();
+                    String toDate = unavailability.getUnavailableToDate().toString();
+                    String note = unavailability.getNote();
+                    String unavailabilityLine = "u " + roomNumber + " " + fromDate + " " + toDate + " " + note;
+
+                    writer.write(unavailabilityLine);
+                    writer.newLine();
+                }
 
                 for (Reservation reservation : reservations) {
                     String checkInDate = reservation.getCheckInDate().toString();

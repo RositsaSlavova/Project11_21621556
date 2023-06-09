@@ -21,7 +21,7 @@ public class CommandLineInterface {
         commands.put("open", new OpenCommand(hotel));
         commands.put("close", new CloseCommand(hotel));
         commands.put("save", new SaveCommand(hotel));
-        commands.put("saveas", new SaveAsCommand(hotel));
+        commands.put("saveas", new SaveCommand(hotel));
         commands.put("help",new HelpCommand());
         commands.put("exit",new ExitCommand());
 
@@ -31,6 +31,8 @@ public class CommandLineInterface {
         commandsHotel.put("checkout",new CheckOutCommand(hotel));
         commandsHotel.put("report",new ReportCommand(hotel));
         commandsHotel.put("find",new FindCommand(hotel));
+        commandsHotel.put("find!",new FindUrgentCommand(hotel));
+        commandsHotel.put("unavailable",new UnavailableCommand(hotel));
     }
 
     public void run() {
@@ -44,6 +46,10 @@ public class CommandLineInterface {
 
             switch (commandName) {
                 case "open": {
+                    if(currentFile!=null) {
+                        System.out.println("There is a file that is currently open");
+                        continue;
+                    }
                     if (commandArguments.length < 2) {
                         System.out.println("Invalid command. Usage: open <file>");
                         continue;
@@ -140,6 +146,24 @@ public class CommandLineInterface {
                         continue;
                     }
                     commandsHotel.get("find").execute(commandArguments);
+                }
+                break;
+                case "find!":
+                {
+                    if (currentFile == null) {
+                        System.out.println("No file is currently open");
+                        continue;
+                    }
+                    commandsHotel.get("find!").execute(commandArguments);
+                }
+                break;
+                case "unavailable":
+                {
+                    if (currentFile == null) {
+                        System.out.println("No file is currently open");
+                        continue;
+                    }
+                    commandsHotel.get("unavailable").execute(commandArguments);
                 }
                 break;
                 case "print": {

@@ -19,23 +19,43 @@ public class RoomFinder {
         this.availableRooms=new HashSet<>();
     }
 
-    public Set<Room> findAvailableRooms(){
+   /* public Set<Room> findAvailableRooms(){
         for (Room room:hotel.getRooms()) {
             if (room.getBedsNumber() >= numberOfBeds) {
                 boolean isAvailable = true;
                 for (Reservation reservation : room.getReservations()) {
                     if ((reservation.getCheckOutDate().isBefore(fromDate) && reservation.getCheckInDate().isAfter(toDate)) || reservation.getCheckOutDate().equals(fromDate)) {
-                        isAvailable = false;
-                        break;
-                    }
-                    if (isAvailable) {
                         availableRooms.add(room);
+                    }
+                    else isAvailable=false;
+                    if (!isAvailable) {
+                        availableRooms.remove(room);
+                        break;
                     }
                 }
             }
         }
         return availableRooms;
     }
+*/
+   public Set<Room> findAvailableRooms() {
+       for (Room room : hotel.getRooms()) {
+           if (room.getBedsNumber() >= numberOfBeds) {
+               boolean isAvailable = true;
+               for (Reservation reservation : room.getReservations()) {
+                   if (!(reservation.getCheckOutDate().isBefore(fromDate) || reservation.getCheckInDate().isAfter(toDate))) {
+                       // The room has overlapping reservations, so it is not available
+                       isAvailable = false;
+                       break;
+                   }
+               }
+               if (isAvailable) {
+                   availableRooms.add(room);
+               }
+           }
+       }
+       return availableRooms;
+   }
 
     public Room findRoomWithFewestBeds() {
         if (availableRooms.isEmpty()) return null;

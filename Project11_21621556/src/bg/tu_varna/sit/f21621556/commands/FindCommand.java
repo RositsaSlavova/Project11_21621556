@@ -14,7 +14,6 @@ public class FindCommand implements CommandHotel {
     private int numberOfBeds;
     private LocalDate fromDate;
     private LocalDate toDate;
-
     private Set<Room> availableRooms;
     public FindCommand(Hotel hotel) {
         this.hotel = hotel;
