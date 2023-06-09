@@ -37,7 +37,7 @@ public class FindCommand implements CommandHotel {
             System.out.println("No available rooms.");
             return;
         }
-        System.out.println(room);
+        System.out.println("We have found room " + room.getNumber() + " available for your preferred dates. To proceed with the check-in, please use the command: checkin " + room.getNumber() + " " + fromDate + " " + toDate + " [note] [guests]");
         availableRooms.clear();
     }
 }
