@@ -2,8 +2,8 @@ package bg.tu_varna.sit.f21621556.commands;
 
 import bg.tu_varna.sit.f21621556.contracts.CommandHotel;
 import bg.tu_varna.sit.f21621556.entities.Hotel;
-import bg.tu_varna.sit.f21621556.entities.Reservation;
 import bg.tu_varna.sit.f21621556.entities.Room;
+import bg.tu_varna.sit.f21621556.entities.RoomFinder;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -31,8 +31,9 @@ public class FindCommand implements CommandHotel {
         fromDate=LocalDate.parse(command[2]);
         toDate=LocalDate.parse(command[3]);
 
-        availableRooms=findAvailableRooms();
-        Room room=findRoomWithFewestBeds();
+        RoomFinder roomFinder=new RoomFinder(hotel,numberOfBeds,fromDate,toDate);
+        availableRooms=roomFinder.findAvailableRooms();
+        Room room=roomFinder.findRoomWithFewestBeds();
         if(room==null) {
             System.out.println("No available rooms.");
             return;
@@ -40,35 +41,4 @@ public class FindCommand implements CommandHotel {
         System.out.println(room);
         availableRooms.clear();
     }
-
-    private Set<Room> findAvailableRooms(){
-        for (Room room:hotel.getRooms()) {
-            if (room.getBedsNumber() >= numberOfBeds) {
-                boolean isAvailable = true;
-                for (Reservation reservation : room.getReservations()) {
-                    if ((reservation.getCheckOutDate().isBefore(fromDate) && reservation.getCheckInDate().isAfter(toDate)) || reservation.getCheckOutDate().equals(fromDate)) {
-                        isAvailable = false;
-                        break;
-                    }
-                    if (isAvailable) {
-                        availableRooms.add(room);
-                    }
-                }
-            }
-        }
-        return availableRooms;
-    }
-    private Room findRoomWithFewestBeds() {
-        if (availableRooms.isEmpty()) return null;
-        if (availableRooms.size() == 1) return availableRooms.iterator().next();
-        Room roomWithFewestBeds = availableRooms.iterator().next();
-
-        for (Room room : availableRooms) {
-            if (room.getBedsNumber() < roomWithFewestBeds.getBedsNumber()) {
-                roomWithFewestBeds = room;
-            }
-        }
-        return roomWithFewestBeds;
-    }
-
 }
