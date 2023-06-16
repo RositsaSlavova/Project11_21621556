@@ -34,7 +34,13 @@ public class CheckInCommand implements CommandHotel {
             System.out.println("Invalid room number");
             return;
         }
-        if(command.length>5) guestNumber=Integer.parseInt(command[5]);
+        if(command.length>5) {
+            guestNumber=Integer.parseInt(command[5]);
+            if(!checkBedsInRoom()) {
+                System.out.println("The room does not have the requested number of beds");
+                return;
+            }
+        }
         else guestNumber=room.getBedsNumber();
 
         if(!isRoomAvailable()){
@@ -69,6 +75,17 @@ public class CheckInCommand implements CommandHotel {
             if(room.getNumber().equals(roomNumber)){
                 room.addReservation(reservation);
                 return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean checkBedsInRoom(){
+        for (Room room:hotel.getRooms()) {
+            if(room.getNumber().equals(roomNumber)){
+                if(guestNumber<=room.getBedsNumber() && guestNumber>0){
+                    return true;
+                }
             }
         }
         return false;

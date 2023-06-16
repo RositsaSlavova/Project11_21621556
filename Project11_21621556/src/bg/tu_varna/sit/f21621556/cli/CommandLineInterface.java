@@ -174,6 +174,9 @@ public class CommandLineInterface {
                     }
                 }
                 break;
+                default:
+                    System.out.println("Invalid command. Please enter a valid command.");
+                    break;
             }
         }
     }
