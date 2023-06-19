@@ -5,7 +5,7 @@ import bg.tu_varna.sit.f21621556.contracts.Command;
 import bg.tu_varna.sit.f21621556.contracts.CommandHotel;
 import bg.tu_varna.sit.f21621556.entities.Hotel;
 import bg.tu_varna.sit.f21621556.entities.Room;
-import bg.tu_varna.sit.f21621556.implementations.*;
+import bg.tu_varna.sit.f21621556.cli_implementations.*;
 
 import java.util.*;
 

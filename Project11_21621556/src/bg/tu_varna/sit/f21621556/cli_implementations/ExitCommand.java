@@ -1,4 +1,4 @@
-package bg.tu_varna.sit.f21621556.implementations;
+package bg.tu_varna.sit.f21621556.cli_implementations;
 
 import bg.tu_varna.sit.f21621556.contracts.Command;
 
