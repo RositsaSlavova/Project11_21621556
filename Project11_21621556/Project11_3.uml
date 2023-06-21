@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>bg.tu_varna.sit.f21621556.entities.Reservation</OriginalElement>
+  <nodes>
+    <node x="-82.25" y="377.46188340807174">bg.tu_varna.sit.f21621556.entities.Room</node>
+    <node x="-165.1580717488789" y="795.0762331838565">bg.tu_varna.sit.f21621556.entities.RoomFinder</node>
+    <node x="54.75" y="23.502242152466323">bg.tu_varna.sit.f21621556.entities.Unavailability</node>
+    <node x="240.60201793721967" y="275.7443946188341">bg.tu_varna.sit.f21621556.entities.Hotel</node>
+    <node x="-260.25" y="23.50224215246635">bg.tu_varna.sit.f21621556.entities.Reservation</node>
+    <node x="-313.7668161434977" y="390.95515695067274">bg.tu_varna.sit.f21621556.entities.RoomReport</node>
+    <node x="403.72309417040333" y="739.5156950672647">bg.tu_varna.sit.f21621556.cli.CommandLineInterface</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="bg.tu_varna.sit.f21621556.entities.Hotel" target="bg.tu_varna.sit.f21621556.entities.Room" relationship="TO_MANY">
+      <point x="0.0" y="-116.5" />
+      <point x="356.10201793721967" y="659.0" />
+      <point x="42.25" y="659.0" />
+      <point x="0.0" y="171.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.entities.RoomFinder" target="bg.tu_varna.sit.f21621556.entities.Room" relationship="TO_MANY">
+      <point x="0.0" y="-49.5" />
+      <point x="-17.15807174887891" y="659.0" />
+      <point x="42.25" y="659.0" />
+      <point x="0.0" y="171.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.entities.Room" target="bg.tu_varna.sit.f21621556.entities.Reservation" relationship="TO_MANY">
+      <point x="-15.0" y="-171.5" />
+      <point x="27.25" y="265.0" />
+      <point x="27.25" y="265.0" />
+      <point x="140.0" y="127.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.entities.Hotel" relationship="TO_ONE">
+      <point x="0.0" y="-38.5" />
+      <point x="511.22309417040333" y="781.7264573991033" />
+      <point x="356.10201793721967" y="781.7264573991033" />
+      <point x="0.0" y="116.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.entities.RoomFinder" target="bg.tu_varna.sit.f21621556.entities.Hotel" relationship="TO_ONE">
+      <point x="-15.0" y="-49.5" />
+      <point x="-32.15807174887891" y="944.0" />
+      <point x="356.10201793721967" y="944.0" />
+      <point x="0.0" y="116.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.entities.Room" target="bg.tu_varna.sit.f21621556.entities.Unavailability" relationship="TO_ONE">
+      <point x="20.0" y="-171.5" />
+      <point x="-135.0" y="105.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6059782608695652" showDependencies="true" x="324.0" y="537.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

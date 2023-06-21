@@ -17,7 +17,7 @@ public class CheckOutCommand implements CommandHotel {
 
     @Override
     public void execute(String[] command) {
-        if (command.length <2) {
+        if (command.length !=2) {
             System.out.println("Invalid command. Usage: checkout <room>");
             return;
         }

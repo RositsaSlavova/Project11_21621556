@@ -139,6 +139,7 @@ public class CommandLineInterface {
                     }
                     commandsHotel.get("report").execute(commandArguments);
                 }
+                break;
                 case "find":
                 {
                     if (currentFile == null) {

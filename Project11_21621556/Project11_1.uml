@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>bg.tu_varna.sit.f21621556.cli_implementations.CloseCommand</OriginalElement>
+  <nodes>
+    <node x="17.750000000000057" y="288.0">bg.tu_varna.sit.f21621556.cli.CommandLineInterface</node>
+    <node x="93.5" y="125.0">bg.tu_varna.sit.f21621556.cli_implementations.ExitCommand</node>
+    <node x="46.25000000000003" y="-15.0">bg.tu_varna.sit.f21621556.contracts.Command</node>
+    <node x="271.5" y="125.0">bg.tu_varna.sit.f21621556.cli_implementations.CloseCommand</node>
+    <node x="467.5" y="91.0">bg.tu_varna.sit.f21621556.cli_implementations.OpenCommand</node>
+    <node x="-98.5" y="125.0">bg.tu_varna.sit.f21621556.cli_implementations.SaveCommand</node>
+    <node x="743.5" y="125.0">bg.tu_varna.sit.f21621556.cli_implementations.HelpCommand</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="bg.tu_varna.sit.f21621556.cli_implementations.ExitCommand" target="bg.tu_varna.sit.f21621556.contracts.Command" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="172.5" y="70.0" />
+      <point x="359.5" y="70.0" />
+      <point x="359.5" y="60.0" />
+      <point x="164.75" y="60.0" />
+      <point x="39.5" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli_implementations.SaveCommand" target="bg.tu_varna.sit.f21621556.contracts.Command" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="-12.5" y="70.0" />
+      <point x="359.5" y="70.0" />
+      <point x="359.5" y="60.0" />
+      <point x="164.75" y="60.0" />
+      <point x="39.5" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.cli_implementations.CloseCommand" relationship="CREATE">
+      <point x="107.5" y="-30.0" />
+      <point x="359.5" y="296.5" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.cli_implementations.OpenCommand" relationship="CREATE">
+      <point x="107.5" y="-15.0" />
+      <point x="595.5" y="311.5" />
+      <point x="-0.0" y="72.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.cli_implementations.HelpCommand" relationship="CREATE">
+      <point x="107.5" y="-0.0" />
+      <point x="822.5" y="326.5" />
+      <point x="-0.0" y="38.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli_implementations.CloseCommand" target="bg.tu_varna.sit.f21621556.contracts.Command" relationship="REALIZATION">
+      <point x="-15.0" y="-38.5" />
+      <point x="344.5" y="12.0" />
+      <point x="79.0" y="0.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.cli_implementations.SaveCommand" relationship="CREATE">
+      <point x="-100.0" y="-38.5" />
+      <point x="37.75000000000006" y="38.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli_implementations.HelpCommand" target="bg.tu_varna.sit.f21621556.contracts.Command" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="822.5" y="70.0" />
+      <point x="359.50000000000006" y="70.0" />
+      <point x="359.5" y="60.0" />
+      <point x="164.75" y="60.0" />
+      <point x="39.5" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.cli_implementations.ExitCommand" relationship="CREATE">
+      <point x="47.24999999999994" y="-38.5" />
+      <point x="-0.0" y="38.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli_implementations.OpenCommand" target="bg.tu_varna.sit.f21621556.contracts.Command" relationship="REALIZATION">
+      <point x="0.0" y="-72.5" />
+      <point x="595.5" y="70.0" />
+      <point x="359.5" y="70.0" />
+      <point x="359.5" y="60.0" />
+      <point x="164.75" y="60.0" />
+      <point x="39.5" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.contracts.Command" relationship="TO_MANY">
+      <point x="-107.5" y="-0.0" />
+      <point x="-116.0" y="326.5" />
+      <point x="-116.0" y="12.0" />
+      <point x="-79.0" y="-0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9629485935984484" showDependencies="true" x="393.0517224012893" y="195.28092264302984" />
+  <SelectedNodes>
+    <node>bg.tu_varna.sit.f21621556.cli_implementations.CloseCommand</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

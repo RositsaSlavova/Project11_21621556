@@ -19,25 +19,6 @@ public class RoomFinder {
         this.availableRooms=new HashSet<>();
     }
 
-   /* public Set<Room> findAvailableRooms(){
-        for (Room room:hotel.getRooms()) {
-            if (room.getBedsNumber() >= numberOfBeds) {
-                boolean isAvailable = true;
-                for (Reservation reservation : room.getReservations()) {
-                    if ((reservation.getCheckOutDate().isBefore(fromDate) && reservation.getCheckInDate().isAfter(toDate)) || reservation.getCheckOutDate().equals(fromDate)) {
-                        availableRooms.add(room);
-                    }
-                    else isAvailable=false;
-                    if (!isAvailable) {
-                        availableRooms.remove(room);
-                        break;
-                    }
-                }
-            }
-        }
-        return availableRooms;
-    }
-*/
    public Set<Room> findAvailableRooms() {
        for (Room room : hotel.getRooms()) {
            if (room.getBedsNumber() >= numberOfBeds) {

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>bg.tu_varna.sit.f21621556.commands.CheckOutCommand</OriginalElement>
+  <nodes>
+    <node x="38.81607574536656" y="420.9709911361805">bg.tu_varna.sit.f21621556.cli.CommandLineInterface</node>
+    <node x="130.49999999999994" y="102.5">bg.tu_varna.sit.f21621556.commands.AvailabilityCommand</node>
+    <node x="272.24999999999994" y="-15.0">bg.tu_varna.sit.f21621556.contracts.CommandHotel</node>
+    <node x="371.3444802578565" y="257.08984689766316">bg.tu_varna.sit.f21621556.commands.FindUrgentCommand</node>
+    <node x="-98.5" y="124.5">bg.tu_varna.sit.f21621556.commands.UnavailableCommand</node>
+    <node x="576.3444802578565" y="114.0">bg.tu_varna.sit.f21621556.commands.ReportCommand</node>
+    <node x="870.5330378726833" y="223.58984689766316">bg.tu_varna.sit.f21621556.commands.CheckInCommand</node>
+    <node x="1063.1478646253022" y="114.0">bg.tu_varna.sit.f21621556.commands.FindCommand</node>
+    <node x="1248.0044319097503" y="235.08984689766316">bg.tu_varna.sit.f21621556.commands.CheckOutCommand</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.commands.FindUrgentCommand" relationship="CREATE">
+      <point x="107.5" y="30.0" />
+      <point x="473.8444802578565" y="489.4709911361805" />
+      <point x="-0.0" y="38.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.commands.ReportCommand" target="bg.tu_varna.sit.f21621556.contracts.CommandHotel" relationship="REALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="710.3444802578565" y="60.0" />
+      <point x="398.24999999999994" y="60.0" />
+      <point x="42.0" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.commands.AvailabilityCommand" target="bg.tu_varna.sit.f21621556.contracts.CommandHotel" relationship="REALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="286.49999999999994" y="70.0" />
+      <point x="821.5" y="70.0" />
+      <point x="821.5" y="60.0" />
+      <point x="398.24999999999994" y="60.0" />
+      <point x="42.0" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.commands.UnavailableCommand" relationship="CREATE">
+      <point x="-107.5" y="-15.0" />
+      <point x="6.0" y="444.4709911361805" />
+      <point x="-0.0" y="38.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.commands.FindUrgentCommand" target="bg.tu_varna.sit.f21621556.contracts.CommandHotel" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="473.8444802578565" y="70.0" />
+      <point x="821.5" y="70.0" />
+      <point x="821.5" y="60.0" />
+      <point x="398.24999999999994" y="60.0" />
+      <point x="42.0" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.commands.CheckOutCommand" relationship="CREATE">
+      <point x="-15.0" y="38.5" />
+      <point x="131.31607574536656" y="396.5" />
+      <point x="1346.5044319097503" y="396.5" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.commands.FindCommand" relationship="CREATE">
+      <point x="107.5" y="-15.0" />
+      <point x="1147.6478646253022" y="444.4709911361805" />
+      <point x="-0.0" y="38.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.commands.CheckInCommand" relationship="CREATE">
+      <point x="107.5" y="-30.0" />
+      <point x="972.0330378726833" y="429.4709911361805" />
+      <point x="-0.0" y="72.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.contracts.CommandHotel" relationship="TO_MANY">
+      <point x="-107.5" y="-0.0" />
+      <point x="-116.0" y="459.4709911361805" />
+      <point x="-116.0" y="12.0" />
+      <point x="-84.0" y="-0.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.commands.CheckInCommand" target="bg.tu_varna.sit.f21621556.contracts.CommandHotel" relationship="REALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="972.0330378726833" y="70.0" />
+      <point x="821.5" y="70.0" />
+      <point x="821.5" y="60.0" />
+      <point x="398.24999999999994" y="60.0" />
+      <point x="42.0" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.commands.FindCommand" target="bg.tu_varna.sit.f21621556.contracts.CommandHotel" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="1147.6478646253022" y="70.0" />
+      <point x="821.5" y="70.0" />
+      <point x="821.5" y="60.0" />
+      <point x="398.24999999999994" y="60.0" />
+      <point x="42.0" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.commands.UnavailableCommand" target="bg.tu_varna.sit.f21621556.contracts.CommandHotel" relationship="REALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="6.0" y="70.0" />
+      <point x="821.5" y="70.0" />
+      <point x="821.5" y="60.0" />
+      <point x="398.24999999999994" y="60.0" />
+      <point x="42.0" y="27.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.commands.ReportCommand" relationship="CREATE">
+      <point x="-0.0" y="38.5" />
+      <point x="146.31607574536656" y="381.5" />
+      <point x="710.3444802578565" y="381.5" />
+      <point x="-0.0" y="60.5" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.commands.CheckOutCommand" target="bg.tu_varna.sit.f21621556.contracts.CommandHotel" relationship="REALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="1346.5044319097503" y="12.0" />
+      <point x="84.0" y="0.0" />
+    </edge>
+    <edge source="bg.tu_varna.sit.f21621556.cli.CommandLineInterface" target="bg.tu_varna.sit.f21621556.commands.AvailabilityCommand" relationship="CREATE">
+      <point x="-69.75" y="-38.5" />
+      <point x="76.56607574536656" y="255.25" />
+      <point x="286.49999999999994" y="255.25" />
+      <point x="-0.0" y="60.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7240373395565928" showDependencies="true" x="683.0" y="184.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
