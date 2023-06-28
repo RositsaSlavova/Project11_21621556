@@ -33,8 +33,10 @@ public class CheckOutCommand implements CommandHotel {
             System.out.println("The room is currently available, so it cannot be checked out.");
         }
         else{
-            checkOutRoom();
-            System.out.println("Check out successful");
+            if (checkOutRoom()) {
+                System.out.println("Check out successful");
+            }
+            else System.out.println("Failed to check out");
         }
     }
 

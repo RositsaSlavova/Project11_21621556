@@ -25,7 +25,7 @@ public class RoomFinder {
                boolean isAvailable = true;
                for (Reservation reservation : room.getReservations()) {
                    if (!(reservation.getCheckOutDate().isBefore(fromDate) || reservation.getCheckInDate().isAfter(toDate))) {
-                       // The room has overlapping reservations, so it is not available
+                       //Заета е, прекратява се цикълът
                        isAvailable = false;
                        break;
                    }
@@ -33,6 +33,7 @@ public class RoomFinder {
                if (isAvailable) {
                    availableRooms.add(room);
                }
+               //Ако след разглеждането на всички резервации булевата променлива си остане true - стаята е свободна и се добавя в списъка
            }
        }
        return availableRooms;

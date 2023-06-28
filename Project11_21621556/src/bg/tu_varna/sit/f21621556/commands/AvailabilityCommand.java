@@ -50,8 +50,9 @@ public class AvailabilityCommand implements CommandHotel {
             for (Reservation reservation:room.getReservations()) {
                 if ((date.isAfter(reservation.getCheckInDate()) && date.isBefore(reservation.getCheckOutDate())) || date.equals(reservation.getCheckInDate())) {
                     availableRooms.remove(room.getNumber());
+                    break;
                 }
-                //Ако датата съвпада с check out-а се води че стаята е свободна
+                //Ако датата съвпада с check out-а, се води, че стаята е свободна
             }
         }
         return availableRooms;

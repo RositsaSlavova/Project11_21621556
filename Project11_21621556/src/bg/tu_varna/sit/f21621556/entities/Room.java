@@ -59,7 +59,7 @@ public class Room {
                 this.isAvailable = false;
             }
         }
-    }
+    }//Ако е недостъпна стаята на текущата дата, то се променя статуса ѝ на заета
 
     @Override
     public String toString() {

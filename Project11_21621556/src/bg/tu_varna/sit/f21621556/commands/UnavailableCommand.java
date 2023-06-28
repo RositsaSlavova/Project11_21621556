@@ -39,6 +39,6 @@ public class UnavailableCommand implements CommandHotel {
         Unavailability unavailability = new Unavailability(fromDate, toDate, note);
 
         room.setUnavailability(unavailability);
-        System.out.println("Room " + roomNumber + " is set unavailable for the range: " + fromDate + " to " + toDate);
+        System.out.println("Room " + roomNumber + " is set unavailable from: " + fromDate + " to " + toDate);
     }
 }
